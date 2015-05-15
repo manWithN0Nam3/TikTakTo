@@ -29,7 +29,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.whichPlayerLabel.text = @"player1";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,9 +43,16 @@
 
     if (CGRectContainsPoint(self.labelOne.frame, point)) {
         NSLog(@"labelOne");
-    }
+
+
+
+        }
+
     if (CGRectContainsPoint(self.labelTwo.frame, point)) {
         NSLog(@"labelTwo");
+
+
+
     }
 
     if (CGRectContainsPoint(self.labelThree.frame, point)) {
@@ -77,5 +84,8 @@
     }
 
 }
+
+
+
 
 @end
