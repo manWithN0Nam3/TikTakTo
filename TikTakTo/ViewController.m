@@ -41,18 +41,18 @@
     self.currentPlayer = 0;
 }
 
-- (void)updateLabel:(UILabel *)currentLabel{
+- (void)updateLabel:(UILabel *)cLabel{
 
-    if ([currentLabel.text isEqualToString:@""]) {
+    if ([cLabel.text isEqualToString:@""]) {
 
 
         if (self.currentPlayer == 0) {
-         currentLabel.text = @"x";
+         cLabel.text = @"x";
             self.currentPlayer = 1;
         }
         else if (self.currentPlayer == 1){
 
-        currentLabel.text = @"o";
+        cLabel.text = @"o";
             self.currentPlayer = 0;
         }
 
@@ -72,8 +72,9 @@
     CGPoint point = [sender locationInView:self.view];
     for (UILabel *label in self.labels) {
 
+        //if the tap gesture is in the labels frame
         if (CGRectContainsPoint(label.frame, point)) {
-            NSLog(@"tag ==  %li",(long)label.tag);
+//            NSLog(@"tag ==  %li",(long)label.tag);
 
             [self updateLabel:label];
 
