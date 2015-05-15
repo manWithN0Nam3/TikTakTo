@@ -26,6 +26,7 @@
 
 
 
+
 @end
 
 @implementation ViewController
@@ -60,12 +61,111 @@
 
 
 
+    if ([self.labelOne.text isEqual: @"x"] && [self.labelTwo.text isEqual: @"x"] &&  [self.labelThree.text  isEqual: @"x"]) {
+
+            NSLog(@"Player One Won!");
+        
+    }
+
+    if ([self.labelFour.text isEqual: @"x"] && [self.labelFive.text isEqual: @"x"] &&  [self.labelSix.text  isEqual: @"x"]) {
+
+        NSLog(@"Player One Won!");
+
+    }
+
+    if ([self.labelSeven.text isEqual: @"x"] && [self.labelEight.text isEqual: @"x"] &&  [self.labelNine.text  isEqual: @"x"]) {
+
+        NSLog(@"Player One Won!");
+
+    }
+
+    if ([self.labelOne.text isEqual: @"x"] && [self.labelFour.text isEqual: @"x"] &&  [self.labelSeven.text  isEqual: @"x"]) {
+
+        NSLog(@"Player One Won!");
+
+    }
+
+    if ([self.labelTwo.text isEqual: @"x"] && [self.labelFive.text isEqual: @"x"] &&  [self.labelEight.text  isEqual: @"x"]) {
+
+        NSLog(@"Player One Won!");
+
+    }
+
+    if ([self.labelThree.text isEqual: @"x"] && [self.labelSix.text isEqual: @"x"] &&  [self.labelNine.text  isEqual: @"x"]) {
+
+        NSLog(@"Player One Won!");
+
+    }
+
+    if ([self.labelOne.text isEqual: @"x"] && [self.labelFive.text isEqual: @"x"] &&  [self.labelNine.text  isEqual: @"x"]) {
+
+        NSLog(@"Player One Won!");
+
+    }
+
+    if ([self.labelThree.text isEqual: @"x"] && [self.labelFive.text isEqual: @"x"] &&  [self.labelSeven.text  isEqual: @"x"]) {
+
+        NSLog(@"Player One Won!");
+
+    }
+
+
+    if ([self.labelOne.text isEqual: @"o"] && [self.labelTwo.text isEqual: @"o"] &&  [self.labelThree.text  isEqual: @"o"]) {
+
+        NSLog(@"Player Two Won!");
+
+    }
+
+    if ([self.labelFour.text isEqual: @"o"] && [self.labelFive.text isEqual: @"o"] &&  [self.labelSix.text  isEqual: @"o"]) {
+
+        NSLog(@"Player Two Won!");
+
+    }
+
+    if ([self.labelSeven.text isEqual: @"o"] && [self.labelEight.text isEqual: @"o"] &&  [self.labelNine.text  isEqual: @"o"]) {
+
+        NSLog(@"Player Two Won!");
+
+    }
+
+    if ([self.labelOne.text isEqual: @"o"] && [self.labelFour.text isEqual: @"o"] &&  [self.labelSeven.text  isEqual: @"o"]) {
+
+        NSLog(@"Player Two Won!");
+
+    }
+
+    if ([self.labelTwo.text isEqual: @"o"] && [self.labelFive.text isEqual: @"o"] &&  [self.labelEight.text  isEqual: @"o"]) {
+
+        NSLog(@"Player Two Won!");
+
+    }
+
+    if ([self.labelThree.text isEqual: @"o"] && [self.labelSix.text isEqual: @"o"] &&  [self.labelNine.text  isEqual: @"o"]) {
+
+        NSLog(@"Player Two Won!");
+
+    }
+
+    if ([self.labelOne.text isEqual: @"o"] && [self.labelFive.text isEqual: @"o"] &&  [self.labelNine.text  isEqual: @"o"]) {
+
+        NSLog(@"Player Two Won!");
+
+    }
+
+    if ([self.labelThree.text isEqual: @"o"] && [self.labelFive.text isEqual: @"o"] &&  [self.labelSeven.text  isEqual: @"o"]) {
+        
+        NSLog(@"Player Two Won!");
+        
+    }
+
+
+
+        }
 
 
 
 
 
-}
 - (IBAction)onGesture:(UITapGestureRecognizer *)sender {
 
 // this variable captures the tap gesture
