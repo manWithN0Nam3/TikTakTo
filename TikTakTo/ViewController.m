@@ -147,17 +147,70 @@
 
 
 }
-//-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-//
-//    if (buttonIndex == 0){
-//
-//        self.labelOne.text = @"";
-//
-//
-//    }
-//
-//}
-//
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+
+    if (buttonIndex == 0){
+
+        if ([self.labelOne.text isEqualToString:@"x"] || ([self.labelOne.text isEqualToString:@"o"]
+
+            &&
+
+            [self.labelTwo.text isEqualToString:@"x"]) || ([self.labelTwo.text isEqualToString:@"o"]
+
+            &&
+
+            [self.labelThree.text isEqualToString:@"x"]) || ([self.labelThree.text isEqualToString:@"o"]
+
+            &&
+
+
+            [self.labelFour.text isEqualToString:@"x"]) || ([self.labelFour.text isEqualToString:@"o"]
+
+            &&
+
+            [self.labelFive.text isEqualToString:@"x"]) || ([self.labelFive.text isEqualToString:@"o"]
+
+            &&
+
+            [self.labelSix.text isEqualToString:@"x"]) || ([self.labelSix.text isEqualToString:@"o"]
+
+            &&
+            
+
+            [self.labelSeven.text isEqualToString:@"x"]) || ([self.labelSeven.text isEqualToString:@"o"]
+
+            &&
+
+            [self.labelEight.text isEqualToString:@"x"]) || ([self.labelEight.text isEqualToString:@"o"]
+
+            &&
+
+            [self.labelNine.text isEqualToString:@"x"]) || [self.labelNine.text isEqualToString:@"o"]
+
+            ) {
+
+
+            self.labelOne.text = @"";
+            self.labelTwo.text = @"";
+
+            self.labelThree.text = @"";
+
+            self.labelFour.text = @"";
+            self.labelFive.text = @"";
+            self.labelSix.text = @"";
+            self.labelSeven.text = @"";
+            self.labelEight.text = @"";
+            self.labelNine.text = @"";
+
+
+
+
+        }
+
+    }
+
+}
+
 
 
 
