@@ -14,6 +14,7 @@
 		975BBB461B05658C0093525B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 975BBB451B05658C0093525B /* Images.xcassets */; };
 		975BBB491B05658C0093525B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 975BBB471B05658C0093525B /* LaunchScreen.xib */; };
 		975BBB551B05658C0093525B /* TikTakToTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 975BBB541B05658C0093525B /* TikTakToTests.m */; };
+		978A2A311B093F12005D3E18 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 978A2A301B093F12005D3E18 /* WebViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		975BBB4E1B05658C0093525B /* TikTakToTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TikTakToTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		975BBB531B05658C0093525B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		975BBB541B05658C0093525B /* TikTakToTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TikTakToTests.m; sourceTree = "<group>"; };
+		978A2A2F1B093F12005D3E18 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		978A2A301B093F12005D3E18 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +89,8 @@
 				975BBB3F1B05658C0093525B /* ViewController.h */,
 				975BBB401B05658C0093525B /* ViewController.m */,
 				975BBB421B05658C0093525B /* Main.storyboard */,
+				978A2A2F1B093F12005D3E18 /* WebViewController.h */,
+				978A2A301B093F12005D3E18 /* WebViewController.m */,
 				975BBB451B05658C0093525B /* Images.xcassets */,
 				975BBB471B05658C0093525B /* LaunchScreen.xib */,
 				975BBB381B05658C0093525B /* Supporting Files */,
@@ -222,6 +227,7 @@
 				975BBB411B05658C0093525B /* ViewController.m in Sources */,
 				975BBB3E1B05658C0093525B /* AppDelegate.m in Sources */,
 				975BBB3B1B05658C0093525B /* main.m in Sources */,
+				978A2A311B093F12005D3E18 /* WebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +422,7 @@
 				975BBB5A1B05658C0093525B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		975BBB5B1B05658C0093525B /* Build configuration list for PBXNativeTarget "TikTakToTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +431,7 @@
 				975BBB5D1B05658C0093525B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

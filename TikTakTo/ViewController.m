@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface ViewController ()<UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *labelOne;
 @property (weak, nonatomic) IBOutlet UILabel *labelTwo;
@@ -24,25 +24,88 @@
 @property BOOL currentPlayer;
 @property NSArray *labels;
 
+@property NSArray *winningLabels;
+@property CGPoint startingPoint;
+
+@property NSTimer *timer;
+@property int countDownNumber;
+@property (weak, nonatomic) IBOutlet UILabel *countDownLabel;
 
 
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 
 @end
 
+
+
 @implementation ViewController
 
+- (IBAction)startGame:(id)sender {
+
+//self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(countDown) userInfo:nil repeats:YES];
+
+}
+
+
+
+
+//-(void)countDown{
+//
+//
+//    self.countDownNumber = self.countDownNumber - 1;
+//self.countDownLabel.text = [NSString stringWithFormat:@"%i",self.countDownNumber];
+//
+//    if (self.countDownNumber == 0) {
+//        [self.timer invalidate];
+//    }
+//
+//}
+//
+//-(void)resetTimer{
+//
+//    self.countDownNumber = 10;
+//    self.countDownLabel.text = [NSString stringWithFormat:@"%i",self.countDownNumber];
+//
+//}
+
+//#1
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.whichPlayerLabel.text = @"player1";
+    self.whichPlayerLabel.text = @"x";
 
 
     self.labels = @[self.labelOne, self.labelTwo,self.labelThree, self.labelFour,self.labelFive, self.labelSix, self.labelSeven, self.labelEight, self.labelNine];
 
+
+
+
+
+
+    self.winningLabels = @[self.labelOne, self.labelTwo, self.labelThree];
+
+
     //0 is player1. 1 is player 2
     self.currentPlayer = 0;
+
+    self.startingPoint = self.whichPlayerLabel.center;
+//    self.alertView.delegate = self;
+
+    self.countDownNumber = 10;
+
+
+
+
+    NSLog(@"%@",self.timer);
+
+
 }
 
+
+
+//#3
 - (void)updateLabel:(UILabel *)cLabel{
+
+
 
     if ([cLabel.text isEqualToString:@""]) {
 
@@ -50,62 +113,114 @@
         if (self.currentPlayer == 0) {
          cLabel.text = @"x";
             self.currentPlayer = 1;
+            self.whichPlayerLabel.text = @"o";
+            
         }
         else if (self.currentPlayer == 1){
 
         cLabel.text = @"o";
             self.currentPlayer = 0;
+            self.whichPlayerLabel.text = @"x";
+
         }
 
     }
 
+    [self whoWon];
+
+}
+
+
+
+
+-(void)alertView:(NSString *)player{
+
+   UIAlertView *alertView = [UIAlertView new];
+    alertView.delegate = self;
+
+    alertView.title = player;
+
+    
+    [alertView addButtonWithTitle:@"restart"];
+    [alertView show];
+
+
+
+}
+//-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+//
+//    if (buttonIndex == 0){
+//
+//        self.labelOne.text = @"";
+//
+//
+//    }
+//
+//}
+//
+
+
+
+
+
+//#4
+
+-(void)whoWon{
 
 
     if ([self.labelOne.text isEqual: @"x"] && [self.labelTwo.text isEqual: @"x"] &&  [self.labelThree.text  isEqual: @"x"]) {
 
-            NSLog(@"Player One Won!");
-        
+        NSLog(@"Player One Won!");
+        [self alertView:@"Player One Won"];
+
     }
 
     if ([self.labelFour.text isEqual: @"x"] && [self.labelFive.text isEqual: @"x"] &&  [self.labelSix.text  isEqual: @"x"]) {
 
         NSLog(@"Player One Won!");
+        [self alertView:@"Player One Won"];
 
     }
 
     if ([self.labelSeven.text isEqual: @"x"] && [self.labelEight.text isEqual: @"x"] &&  [self.labelNine.text  isEqual: @"x"]) {
 
         NSLog(@"Player One Won!");
+        [self alertView:@"Player One Won"];
 
     }
 
     if ([self.labelOne.text isEqual: @"x"] && [self.labelFour.text isEqual: @"x"] &&  [self.labelSeven.text  isEqual: @"x"]) {
 
         NSLog(@"Player One Won!");
+        [self alertView:@"Player One Won"];
 
     }
 
     if ([self.labelTwo.text isEqual: @"x"] && [self.labelFive.text isEqual: @"x"] &&  [self.labelEight.text  isEqual: @"x"]) {
 
         NSLog(@"Player One Won!");
+        [self alertView:@"Player One Won"];
 
     }
 
     if ([self.labelThree.text isEqual: @"x"] && [self.labelSix.text isEqual: @"x"] &&  [self.labelNine.text  isEqual: @"x"]) {
 
         NSLog(@"Player One Won!");
+        [self alertView:@"Player One Won"];
 
     }
 
     if ([self.labelOne.text isEqual: @"x"] && [self.labelFive.text isEqual: @"x"] &&  [self.labelNine.text  isEqual: @"x"]) {
 
         NSLog(@"Player One Won!");
+        [self alertView:@"Player One Won"];
 
     }
 
     if ([self.labelThree.text isEqual: @"x"] && [self.labelFive.text isEqual: @"x"] &&  [self.labelSeven.text  isEqual: @"x"]) {
 
         NSLog(@"Player One Won!");
+        [self alertView:@"Player One Won"];
 
     }
 
@@ -113,141 +228,130 @@
     if ([self.labelOne.text isEqual: @"o"] && [self.labelTwo.text isEqual: @"o"] &&  [self.labelThree.text  isEqual: @"o"]) {
 
         NSLog(@"Player Two Won!");
+        [self alertView:@"Player Two Won"];
 
     }
 
     if ([self.labelFour.text isEqual: @"o"] && [self.labelFive.text isEqual: @"o"] &&  [self.labelSix.text  isEqual: @"o"]) {
 
         NSLog(@"Player Two Won!");
+        [self alertView:@"Player Two Won"];
 
     }
 
     if ([self.labelSeven.text isEqual: @"o"] && [self.labelEight.text isEqual: @"o"] &&  [self.labelNine.text  isEqual: @"o"]) {
 
         NSLog(@"Player Two Won!");
+        [self alertView:@"Player Two Won"];
 
     }
 
     if ([self.labelOne.text isEqual: @"o"] && [self.labelFour.text isEqual: @"o"] &&  [self.labelSeven.text  isEqual: @"o"]) {
 
         NSLog(@"Player Two Won!");
+        [self alertView:@"Player Two Won"];
 
     }
 
     if ([self.labelTwo.text isEqual: @"o"] && [self.labelFive.text isEqual: @"o"] &&  [self.labelEight.text  isEqual: @"o"]) {
 
         NSLog(@"Player Two Won!");
+        [self alertView:@"Player Two Won"];
 
     }
 
     if ([self.labelThree.text isEqual: @"o"] && [self.labelSix.text isEqual: @"o"] &&  [self.labelNine.text  isEqual: @"o"]) {
 
         NSLog(@"Player Two Won!");
+        [self alertView:@"Player Two Won"];
 
     }
 
     if ([self.labelOne.text isEqual: @"o"] && [self.labelFive.text isEqual: @"o"] &&  [self.labelNine.text  isEqual: @"o"]) {
-
+        
         NSLog(@"Player Two Won!");
+        [self alertView:@"Player Two Won"];
 
     }
 
     if ([self.labelThree.text isEqual: @"o"] && [self.labelFive.text isEqual: @"o"] &&  [self.labelSeven.text  isEqual: @"o"]) {
         
         NSLog(@"Player Two Won!");
-        
-    }
-
-
-
-        }
-
-
-
-
-
-- (IBAction)onGesture:(UITapGestureRecognizer *)sender {
-
-// this variable captures the tap gesture
-    CGPoint point = [sender locationInView:self.view];
-    for (UILabel *label in self.labels) {
-
-        //if the tap gesture is in the labels frame
-        if (CGRectContainsPoint(label.frame, point)) {
-//            NSLog(@"tag ==  %li",(long)label.tag);
-
-            [self updateLabel:label];
-
-            
-        }
+        [self alertView:@"Player Two Won"];
 
     }
 
-
-
-
-
-//    if (CGRectContainsPoint(self.labelOne.frame, point)) {
-//        NSLog(@"labelOne");
-//
-//        [self updateLabel:self.labelOne];
-//
-//
-//        }
-//
-//    if (CGRectContainsPoint(self.labelTwo.frame, point)) {
-//        NSLog(@"labelTwo");
-//
-//        [self updateLabel:self.labelTwo];
-//
-//
-//    }
-//
-//    if (CGRectContainsPoint(self.labelThree.frame, point)) {
-//        NSLog(@"labelThree");
-//        [self updateLabel:self.labelTwo];
-//
-//    }
-//
-//    if (CGRectContainsPoint(self.labelFour.frame, point)) {
-//        NSLog(@"label4");
-//        [self updateLabel:self.labelTwo];
-//
-//    }
-//
-//    if (CGRectContainsPoint(self.labelFive.frame, point)) {
-//        NSLog(@"label5");
-//        [self updateLabel:self.labelTwo];
-//
-//    }
-//
-//    if (CGRectContainsPoint(self.labelSix.frame, point)) {
-//        NSLog(@"label6");
-//        [self updateLabel:self.labelTwo];
-//
-//    }
-//
-//    if (CGRectContainsPoint(self.labelSeven.frame, point)) {
-//        NSLog(@"label7");
-//        [self updateLabel:self.labelTwo];
-//
-//    }
-//
-//    if (CGRectContainsPoint(self.labelEight.frame, point)) {
-//        NSLog(@"label8");
-//        [self updateLabel:self.labelTwo];
-//
-//    }
-//
-//    if (CGRectContainsPoint(self.labelNine.frame, point)) {
-//        NSLog(@"label9");
-//        [self updateLabel:self.labelTwo];
-//
-//    }
 
 }
 
 
+
+
+
+//#2
+//- (IBAction)onGesture:(UITapGestureRecognizer *)sender {
+//
+//// this variable captures the tap gesture
+//    CGPoint point = [sender locationInView:self.view];
+//    for (UILabel *label in self.labels) {
+//
+//
+//
+//        //if the tap gesture is in the labels frame
+//        if (CGRectContainsPoint(label.frame, point)) {
+////            NSLog(@"tag ==  %li",(long)label.tag);
+//
+//            [self updateLabel:label];
+//
+//
+//        }
+//
+//    }
+
+
+- (IBAction)onPanG:(UIPanGestureRecognizer *)sender {
+    // this variable captures where the panGesture is taking place on the screen
+    CGPoint pointer = [sender locationInView:self.view];
+    NSLog(@"%@",NSStringFromCGPoint(pointer));
+    self.whichPlayerLabel.center = pointer;
+
+    if(sender.state == UIGestureRecognizerStateBegan){
+
+//self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(countDown) userInfo:nil repeats:YES];
+
+    }
+
+    if (sender.state == UIGestureRecognizerStateEnded) {
+        [UIView animateWithDuration:1.0 animations:^{
+            self.whichPlayerLabel.center = self.startingPoint;
+
+//            [self.timer invalidate];
+//^should be a method
+
+//            [self resetTimer];
+
+        }];
+    }
+
+
+    for (UILabel *label in self.labels) {
+        
+        
+        
+                //if the tap gesture is in the labels frame
+            if (CGRectContainsPoint(label.frame, pointer)) {
+        //            NSLog(@"tag ==  %li",(long)label.tag);
+        
+                    [self updateLabel:label];
+        
+        
+                }
+
+
+
+}
+
+}
 
 
 @end
